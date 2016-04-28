@@ -18,30 +18,35 @@ defenderObj.prototype.init = function(){//成员函数--初始化
         
         var x = Math.floor( Math.random() * Math.floor(canWidth/cellLength) )* cellLength + cellLength/2;
         var y = Math.floor( Math.random() * Math.floor(canHeight/cellLength) )* cellLength + cellLength/2;
-        var field = Math.round(Math.random()*2 + 2)* cellLength;
+        var field = Math.round(Math.random() * 2 + 2)* cellLength;
+        var distance = Math.sqrt( Math.pow(hero.x - x,2) + Math.pow(hero.y - y,2) );
         
         var result = true;
         
-        for(var j = 0 ; j < i ; j ++){
+        if(map[(y - cellLength/2)/cellLength][(x - cellLength/2)/cellLength] == "#" &&
+        distance > hero.radius + field &&
+        x != target.x && y != target.y){
             
-            if(map[(y - cellLength/2)/cellLength][(x - cellLength/2)/cellLength] == "#" &&
-            x != hero.x && y != hero.y && x != target.x && y != target.y &&
-            Math.abs(this.x[j] - x) <= field + this.field[j] &&
-            Math.abs(this.y[j] - y) <= field + this.field[j]){
+            for(var j = 0 ; j < i ; j ++){
                 
-                result = false;
+                if(Math.abs(this.x[j] - x) <= field + this.field[j] &&
+                Math.abs(this.y[j] - y) <= field + this.field[j]){
+                    
+                    result = false;
+                    
+                }
                 
             }
             
-        }
-        
-        if(result){
-            
-            this.x[i] = x;
-            this.y[i] = y;
-            this.field[i] = field;
-            this.bool[i] = true;
-            i ++;
+            if(result){
+                
+                this.x[i] = x;
+                this.y[i] = y;
+                this.field[i] = field;
+                this.bool[i] = true;
+                i ++;
+                
+            }
             
         }
         

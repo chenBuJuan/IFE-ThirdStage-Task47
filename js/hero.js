@@ -2,15 +2,15 @@ var heroObj = function(){//hero类声明
     
     this.x;
     this.y;
-    this.radius;
     
 }
+
+heroObj.prototype.radius = cellLength/2;
 
 heroObj.prototype.init = function(){//成员函数--初始化
     
     this.x = Math.floor( Math.random() * Math.floor(canWidth/cellLength) )* cellLength + cellLength/2;
     this.y = Math.floor( Math.random() * Math.floor(canHeight/120) )* cellLength + cellLength/2;
-    this.radius = cellLength/2;
     
 }
 
