@@ -11,15 +11,15 @@ var hero;//变量--heroObj类的对象实例
 
 var target;//变量--targetObj类的对象实例
 
-var defender;
+var defender;//变量--defenderObj类的对象实例
 
-var bullet;
+var bullet;//变量--bulletObj池的对象实例
 
 var map = [];//变量--二维数组记录虚拟地图
 
 var Level;//变量--设定关卡难度
 
-var GAME,Score;
+var GAME,Score;//变量--游戏是否失败，记录分数
 
 wrapper = document.getElementById("wrapper");//各变量初始化
 canWidth = wrapper.clientWidth;
@@ -114,7 +114,7 @@ function reset(){//重置函数
     
 }
 
-function beginGame(){
+function beginGame(){//开始游戏函数
     
     ctx.save();
     
@@ -154,7 +154,7 @@ function beginGame(){
     
 }
 
-function gameOver(){
+function gameOver(){//游戏结束函数
     
     canAlpha += 0.01;
     

@@ -1,4 +1,4 @@
-var bulletObj = function(){
+var bulletObj = function(){//bulletObj池声明
     
     this.x = [];
     this.y = [];
@@ -8,13 +8,13 @@ var bulletObj = function(){
     
 }
 
-bulletObj.prototype.num = 100;
+bulletObj.prototype.num = 100;//池容量
 
-bulletObj.prototype.radius = cellLength / 5;
+bulletObj.prototype.radius = cellLength / 5;//子弹半径
 
-bulletObj.prototype.speed = cellLength / 2;
+bulletObj.prototype.speed = cellLength / 2;//子弹速率
 
-bulletObj.prototype.init = function(){
+bulletObj.prototype.init = function(){//成员函数--初始化
     
     for(var i = 0 ; i < this.num ; i ++){
         
@@ -28,7 +28,7 @@ bulletObj.prototype.init = function(){
     
 }
 
-bulletObj.prototype.draw = function(){
+bulletObj.prototype.draw = function(){//成员函数--绘制
     
     for(var i = 0 ; i < this.num ; i ++){
         
@@ -51,7 +51,7 @@ bulletObj.prototype.draw = function(){
     
 }
 
-bulletObj.prototype.fire = function(x,y,color,angle){
+bulletObj.prototype.fire = function(x,y,color,angle){//成员函数--生成bulletObj实例
     
     for(var i = 0 ; i < this.num ; i ++){
         
@@ -70,7 +70,7 @@ bulletObj.prototype.fire = function(x,y,color,angle){
     
 }
 
-bulletObj.prototype.dead = function(i){
+bulletObj.prototype.dead = function(i){//成员函数--对象销毁
     
     this.bool[i] = false;
     

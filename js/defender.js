@@ -1,4 +1,4 @@
-var defenderObj = function(){
+var defenderObj = function(){//defenderObj类声明
     
     this.x = [];
     this.y = [];
@@ -8,9 +8,9 @@ var defenderObj = function(){
     
 }
 
-defenderObj.prototype.radius = cellLength/2;
+defenderObj.prototype.radius = cellLength/2;//守卫者半径
 
-defenderObj.prototype.init = function(){
+defenderObj.prototype.init = function(){//成员函数--初始化
     
     var i = 0;
     
@@ -55,7 +55,7 @@ defenderObj.prototype.init = function(){
     
 }
 
-defenderObj.prototype.draw = function(){
+defenderObj.prototype.draw = function(){//成员函数--绘制
     
     for(var i = 0 ; i < this.num ; i ++){
         
@@ -80,7 +80,7 @@ defenderObj.prototype.draw = function(){
     
 }
 
-defenderObj.prototype.buildMap = function(){
+defenderObj.prototype.buildMap = function(){//成员函数--修改虚拟地图
     
     for(var i = 0 ; i < this.num ; i ++){
         
@@ -93,7 +93,7 @@ defenderObj.prototype.buildMap = function(){
     
 }
 
-defenderObj.prototype.dead = function(i){
+defenderObj.prototype.dead = function(i){//成员函数--对象销毁
     
     var xIndex = (this.x[i] - cellLength/2)/cellLength;
     var yIndex = (this.y[i] - cellLength/2)/cellLength;

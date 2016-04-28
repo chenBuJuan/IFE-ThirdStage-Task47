@@ -1,4 +1,4 @@
-function heroDefenderCollision(){
+function heroDefenderCollision(){//检测特工与守卫者视野是否碰撞
     
     for(var i = 0 ; i < defender.num ; i ++){
         
@@ -22,7 +22,7 @@ function heroDefenderCollision(){
     
 }
 
-function bulletBlockCollision(){
+function bulletBlockCollision(){//检测子弹与障碍物是否碰撞
     
     for(var i = 0 ; i < bullet.num ; i ++){
         
@@ -45,7 +45,7 @@ function bulletBlockCollision(){
     
 }
 
-function bulletDefenderCollision(){
+function bulletDefenderCollision(){//检测子弹与守卫者是否碰撞
     
     for(var i = 0 ; i < bullet.num ; i ++){
         
@@ -75,7 +75,7 @@ function bulletDefenderCollision(){
     
 }
 
-function bulletCanvasCollision(){
+function bulletCanvasCollision(){//检测子弹是否超出画布
     
     for(var i = 0 ; i < bullet.num ; i ++){
         
@@ -93,7 +93,7 @@ function bulletCanvasCollision(){
     
 }
 
-function bulletHeroCollision(){
+function bulletHeroCollision(){//检测子弹与特工是否碰撞
     
     for(var i = 0 ; i < bullet.num ; i ++){
         
@@ -114,7 +114,7 @@ function bulletHeroCollision(){
     
 }
 
-function collision(){
+function collision(){//调用函数
     
     heroDefenderCollision();
     bulletBlockCollision();

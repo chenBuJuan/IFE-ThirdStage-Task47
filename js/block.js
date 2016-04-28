@@ -4,11 +4,11 @@ var blockObj = function(){//block类声明
     this.y = [];
     this.width = [];
     this.height = [];
-    this.num = Math.round(Level / 3);
+    this.num = Math.ceil(Level / 3);
     
 }
 
-blockObj.prototype.init = function(){
+blockObj.prototype.init = function(){//成员函数--初始化
     
     var i = 0;
     
